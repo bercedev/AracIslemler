@@ -73,6 +73,9 @@
     <Compile Include="YakıtVerForm.Designer.cs">
       <DependentUpon>YakıtVerForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="KayıtForm.resx">
+      <DependentUpon>KayıtForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +88,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RaporFormu.resx">
+      <DependentUpon>RaporFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

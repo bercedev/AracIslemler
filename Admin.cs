@@ -9,6 +9,7 @@ namespace AracTakip
 {
     internal class Admin
     {
+
         internal static void XYZAyarla(ref int x, ref int y, ref int z)
         {
             Random rnd = new Random();
@@ -25,7 +26,7 @@ namespace AracTakip
             //
             int eskiY = control.Location.Y;
             int foruzunlugu = (eskiY > newY) ? eskiY - newY : newY - eskiY;
-            bool yukari = (eskiY > newY) ? true : false;
+            bool yukari = (eskiY > newY);
             if (!visible) gizlenecek.Visible = visible; // Gizlenecekse güzel görünüm için önceden gizle
             for (int i = 0; i < foruzunlugu; i++)
             {
@@ -43,7 +44,7 @@ namespace AracTakip
             //
             int eskiY = control.Location.Y;
             int foruzunlugu = (eskiY > newY) ? eskiY - newY : newY - eskiY;
-            bool yukari = (eskiY > newY) ? true : false;
+            bool yukari = (eskiY > newY);
 
             if (!visible)  // Gizlenecekse hareket başlamadan önce göster.
                 foreach (var gizlenecekoge in gizlenecekogeler)
@@ -80,10 +81,9 @@ namespace AracTakip
         }
         private static Control ConvertToControl(IWin32Window win)
         {           // BU KISIM İNTERNETTEN ALINDI  //
-            Control control = win as Control;
-            if (control == null)
+            if (!(win is Control))
             {
-                return default(Control); ;
+                return default; 
             }
             return (Control)win;
         }           // BU KISIM İNTERNETTEN ALINDI  //

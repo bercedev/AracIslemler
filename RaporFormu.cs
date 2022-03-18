@@ -16,5 +16,12 @@ namespace AracTakip
         {
             InitializeComponent();
         }
+
+        private void RaporFormu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SuspendLayout();
+            // 
+            // RaporFormu
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -37,9 +41,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RaporFormu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ResumeLayout(false);
-            this.PerformLayout();
             this.Text = "RaporFormu";
+            this.Load += new System.EventHandler(this.RaporFormu_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
