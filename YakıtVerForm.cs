@@ -1,5 +1,6 @@
 ﻿using __;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -45,6 +46,23 @@ namespace AracTakip
         private void YakıtVerForm_Load(object sender, EventArgs e)
         {
             Admin.PlakalarıGetir(plaka,araclarJsonLocation);
+        }
+        int x, y, z;
+        private void LabelRenkDegisme()
+        {
+            //if (delta == 9)
+            //{
+
+            Admin.XYZAyarla(ref x, ref y, ref z);
+            label5.ForeColor = Color.FromArgb(x, y, z);
+            //delta = 0;
+            //}
+            //delta++;
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            LabelRenkDegisme();
         }
     }
 }

@@ -36,6 +36,7 @@
             this.msmodu = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.plaka = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -72,13 +73,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.WindowText;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(50, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(77, 107);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(434, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(405, 220);
             this.dataGridView1.TabIndex = 12;
             // 
             // label1
@@ -103,6 +103,7 @@
             this.msmodu.TabIndex = 18;
             this.msmodu.Text = "Raporla";
             this.msmodu.UseVisualStyleBackColor = false;
+            this.msmodu.Click += new System.EventHandler(this.Msmodu_Click);
             // 
             // plaka
             // 
@@ -114,6 +115,12 @@
             this.plaka.Name = "plaka";
             this.plaka.Size = new System.Drawing.Size(100, 21);
             this.plaka.TabIndex = 20;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // RaporFormu
             // 
@@ -150,5 +157,6 @@
         private System.Windows.Forms.Button msmodu;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ComboBox plaka;
+        private System.Windows.Forms.Timer timer1;
     }
 }

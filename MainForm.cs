@@ -88,7 +88,7 @@ namespace AracTakip
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form frm = new KayıtForm();
+            Form frm = new RaporFormu();
             frm.ShowDialog();
         }
 
