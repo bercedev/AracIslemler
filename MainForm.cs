@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using __;
 
 namespace AracTakip
 {
@@ -12,7 +13,7 @@ namespace AracTakip
             InitializeComponent();
         }
         int /*delta = 0*/ x, y, z;
-
+        
         private void Button1_Click(object sender, EventArgs e)
         {
             Form frm = new KayıtForm();
@@ -77,6 +78,12 @@ namespace AracTakip
         {
             Form frm = new YakıtVerForm();
             frm.ShowDialog();
+        }
+
+ 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Button3_Click(object sender, EventArgs e)

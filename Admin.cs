@@ -9,6 +9,25 @@ namespace AracTakip
 {
     internal class Admin
     {
+        public string apath = Application.StartupPath;
+        public const string araclartxtkonum = "\\araclar.json";
+
+
+        internal static bool PlakaKontrol(TextBox plaka, ErrorProvider errorProvider1)
+        {
+            try
+            {
+                int.Parse(plaka.Text.Substring(0, 1));
+                errorProvider1.Clear();
+                return true;
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(plaka, "Plakayı yanlış yazdınız?");
+                return false;
+            }
+
+        }
 
         internal static void XYZAyarla(ref int x, ref int y, ref int z)
         {
@@ -52,7 +71,7 @@ namespace AracTakip
                     Control gizlenecek = ConvertToControl(gizlenecekoge);
                     if (gizlenecek != default) gizlenecek.Visible = visible;
                 }// Gizlenecekse güzel görünüm için önceden gizle
-            
+
             //
             // HAREKET KISMI
             //
@@ -83,9 +102,19 @@ namespace AracTakip
         {           // BU KISIM İNTERNETTEN ALINDI  //
             if (!(win is Control))
             {
-                return default; 
+                return default;
             }
             return (Control)win;
         }           // BU KISIM İNTERNETTEN ALINDI  //
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+        public const string Author = "Mustafa Dişbudak";
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

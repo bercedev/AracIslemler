@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.plaka = new System.Windows.Forms.TextBox();
+            this.marka = new System.Windows.Forms.TextBox();
+            this.renk = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.kırmızıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +40,7 @@
             this.turuncuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.morToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.başkaBirRenkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.model = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,42 +49,45 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msmodu = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // plaka
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(159, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.plaka.BackColor = System.Drawing.SystemColors.InfoText;
+            this.plaka.ForeColor = System.Drawing.SystemColors.Window;
+            this.plaka.Location = new System.Drawing.Point(159, 59);
+            this.plaka.Name = "plaka";
+            this.plaka.Size = new System.Drawing.Size(100, 20);
+            this.plaka.TabIndex = 0;
+            this.plaka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // marka
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(159, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.marka.BackColor = System.Drawing.SystemColors.InfoText;
+            this.marka.ForeColor = System.Drawing.SystemColors.Window;
+            this.marka.Location = new System.Drawing.Point(159, 85);
+            this.marka.Name = "marka";
+            this.marka.Size = new System.Drawing.Size(100, 20);
+            this.marka.TabIndex = 1;
+            this.marka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // renk
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBox3.ContextMenuStrip = this.contextMenuStrip1;
-            this.textBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Location = new System.Drawing.Point(159, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox3_MouseClick);
-            this.textBox3.TabStopChanged += new System.EventHandler(this.TextBox3_TextChanged);
-            this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
+            this.renk.BackColor = System.Drawing.SystemColors.InfoText;
+            this.renk.ContextMenuStrip = this.contextMenuStrip1;
+            this.renk.ForeColor = System.Drawing.SystemColors.Window;
+            this.renk.Location = new System.Drawing.Point(159, 139);
+            this.renk.Name = "renk";
+            this.renk.Size = new System.Drawing.Size(100, 20);
+            this.renk.TabIndex = 2;
+            this.renk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.renk.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox3_MouseClick);
+            this.renk.TabStopChanged += new System.EventHandler(this.TextBox3_TextChanged);
+            this.renk.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -153,15 +156,15 @@
             this.başkaBirRenkToolStripMenuItem.Text = "Başka Bir Renk";
             this.başkaBirRenkToolStripMenuItem.Click += new System.EventHandler(this.BaşkaBirRenkToolStripMenuItem_Click);
             // 
-            // textBox4
+            // model
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBox4.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox4.Location = new System.Drawing.Point(159, 113);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.model.BackColor = System.Drawing.SystemColors.InfoText;
+            this.model.ForeColor = System.Drawing.SystemColors.Window;
+            this.model.Location = new System.Drawing.Point(159, 113);
+            this.model.Name = "model";
+            this.model.Size = new System.Drawing.Size(100, 20);
+            this.model.TabIndex = 3;
+            this.model.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -205,11 +208,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkRed;
-            this.label5.Location = new System.Drawing.Point(53, 9);
+            this.label5.Location = new System.Drawing.Point(83, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(410, 25);
+            this.label5.Size = new System.Drawing.Size(355, 25);
             this.label5.TabIndex = 8;
-            this.label5.Text = "--ARAÇ İŞLEMLERİ--                       ";
+            this.label5.Text = "--ARAÇ KAYIT--                       ";
             // 
             // timer1
             // 
@@ -238,7 +241,7 @@
             this.exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.exit.Location = new System.Drawing.Point(326, -2);
+            this.exit.Location = new System.Drawing.Point(326, 9);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(22, 19);
             this.exit.TabIndex = 10;
@@ -246,12 +249,32 @@
             this.exit.UseVisualStyleBackColor = false;
             this.exit.Click += new System.EventHandler(this.Exit_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(241, 165);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 20);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Örnek Doldur";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // KayıtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(360, 218);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.msmodu);
             this.Controls.Add(this.label5);
@@ -259,10 +282,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.model);
+            this.Controls.Add(this.renk);
+            this.Controls.Add(this.marka);
+            this.Controls.Add(this.plaka);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Coral;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -271,6 +294,7 @@
             this.Text = "KayıtForm";
             this.Load += new System.EventHandler(this.KayıtForm_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,10 +302,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox plaka;
+        private System.Windows.Forms.TextBox marka;
+        private System.Windows.Forms.TextBox renk;
+        private System.Windows.Forms.TextBox model;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -298,5 +322,7 @@
         private System.Windows.Forms.ToolStripMenuItem turuncuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem morToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem başkaBirRenkToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }
