@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label5 = new System.Windows.Forms.Label();
             this.exit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.plaka = new System.Windows.Forms.TextBox();
             this.msmodu = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.plaka = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -87,16 +90,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Plaka :";
             // 
-            // plaka
-            // 
-            this.plaka.BackColor = System.Drawing.SystemColors.InfoText;
-            this.plaka.ForeColor = System.Drawing.SystemColors.Window;
-            this.plaka.Location = new System.Drawing.Point(351, 37);
-            this.plaka.Name = "plaka";
-            this.plaka.Size = new System.Drawing.Size(100, 20);
-            this.plaka.TabIndex = 14;
-            this.plaka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // msmodu
             // 
             this.msmodu.BackColor = System.Drawing.Color.DimGray;
@@ -111,15 +104,26 @@
             this.msmodu.Text = "Raporla";
             this.msmodu.UseVisualStyleBackColor = false;
             // 
+            // plaka
+            // 
+            this.plaka.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.plaka.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.plaka.ForeColor = System.Drawing.SystemColors.Info;
+            this.plaka.FormattingEnabled = true;
+            this.plaka.Location = new System.Drawing.Point(351, 35);
+            this.plaka.Name = "plaka";
+            this.plaka.Size = new System.Drawing.Size(100, 21);
+            this.plaka.TabIndex = 20;
+            // 
             // RaporFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(530, 354);
+            this.Controls.Add(this.plaka);
             this.Controls.Add(this.msmodu);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.plaka);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.label5);
@@ -131,6 +135,7 @@
             this.Text = "RaporFormu";
             this.Load += new System.EventHandler(this.RaporFormu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +147,8 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox plaka;
         private System.Windows.Forms.Button msmodu;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ComboBox plaka;
     }
 }

@@ -2,9 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AracTakip
@@ -16,7 +14,7 @@ namespace AracTakip
             InitializeComponent();
         }
         int /*delta = 0*/ x, y, z;
-        
+
         private void KayıtForm_Load(object sender, EventArgs e)
         {
 
@@ -33,30 +31,31 @@ namespace AracTakip
             bool fa = Textbox.HepsiYazılmışMı(Controls, msmodu, errorProvider1);
             if (!af || !fa) return;
 
-            string filetxt = File.ReadAllText(Application.StartupPath + Admin.araclartxtkonum);
-            var ars = Json.Read(filetxt);
-            ars.Araclar.Add(
-                new Araç
+            Json.AllSteps JAllSteps = new Json.AllSteps()
+            {
+                JsonFileName = Admin.araclarjsonkonum,
+                StartupPath = Application.StartupPath,
+                JsonaEklenecekClass = new Araç
                 {
                     Marka = marka.Text,
                     Model = model.Text,
                     Plaka = plaka.Text,
                     Renk = renk.Text
                 }
-            );
+            };
 
-            File.WriteAllText(
-                Application.StartupPath + Admin.araclartxtkonum,
-                Json.Create(ars)
-                );
+            JAllSteps.RunAndAddArac();
+
 
             //runPython.CreateAndRun(
             //    Scripts.ListDump,
             //    Application.StartupPath + Admin.araclartxtkonum
             //    );
 
-            Textbox.Temizle(Controls,
-                ref cmd);
+            Textbox.Temizle(
+                Controls,
+                ref cmd
+                );
             MessageBox.Show("Kayıt İşlemi Tamamlandı !");
             Close();
         }
@@ -96,38 +95,56 @@ namespace AracTakip
         readonly List<string> ornekmodeller = new List<string> { "Benz", "Astra", "Fluance", "Model X", "L 200", "Egea", "Corolla", "Civic", "Duster", "Passat" };
         readonly List<string> renkler = new List<string> { "Kırmızı", "Sarı", "Beyaz", "Kahverengi", "Gumus Gri", "Siyah", "Turuncu", "Pembe", "Mor", "Lacivert" };
 
-        async void RandomDoldur()
+        /*async*/
+        void RandomDoldur()
         {
             Textbox.Temizle(Controls, ref cmd);
-            await Task.Run(() =>
+            //await Task.Run(() =>
+            //{
+
+            button1.Enabled = false;
+            for (int i = 0; i < rnd.Next(5); i++)
             {
-                
-                button1.Enabled = false;
-                for (int i = 0; i < rnd.Next(5); i++)
-                {
-                    plaka.Text = String.Format("{0} TR {1}", rnd.Next(1, 82), rnd.Next(500));
-                    Thread.Sleep(33);
-                }
-                for (int i = 0; i < 10; i++)
-                {
-                    int markarnd = rnd.Next(0, 10);
-                    marka.Text = ornekaraclar[markarnd];
-                    model.Text = ornekmodeller[markarnd];
-                    Thread.Sleep(33);
-                }
-                for (int i = 0; i < 20; i++)
-                {
-                    renk.Text = renkler[rnd.Next(0, 10)];
-                    Thread.Sleep(33);
-                }
-                button1.Enabled = true;
-            });
+                plaka.Text = String.Format("{0} TR {1}", rnd.Next(1, 82), rnd.Next(500));
+                Thread.Sleep(33);
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                int markarnd = rnd.Next(0, 10);
+                marka.Text = ornekaraclar[markarnd];
+                model.Text = ornekmodeller[markarnd];
+                Thread.Sleep(33);
+            }
+            for (int i = 0; i < 20; i++)
+            {
+                renk.Text = renkler[rnd.Next(0, 10)];
+                Thread.Sleep(33);
+            }
+            button1.Enabled = true;
+            //});
         }
         private void Button1_Click(object sender, EventArgs e)
         {
 
             RandomDoldur();
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Json.AllSteps JAllSteps = new Json.AllSteps()
+            {
+                StartupPath = Application.StartupPath,
+                JsonFileName = Admin.araclarjsonkonum,
+                JsonaEklenecekClass = new Araç
+                {
+                    Marka = marka.Text,
+                    Model = model.Text,
+                    Plaka = plaka.Text,
+                    Renk = renk.Text
+                }
+            };
+            JAllSteps.RunAndAddArac();
         }
 
         //private void Button1_Click(object sender, EventArgs e)

@@ -34,12 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tutar = new System.Windows.Forms.TextBox();
-            this.plaka = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.msmodu = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.parabirimi = new System.Windows.Forms.TextBox();
+            this.plaka = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,19 +93,9 @@
             this.tutar.ForeColor = System.Drawing.SystemColors.Window;
             this.tutar.Location = new System.Drawing.Point(167, 112);
             this.tutar.Name = "tutar";
-            this.tutar.Size = new System.Drawing.Size(100, 20);
+            this.tutar.Size = new System.Drawing.Size(80, 20);
             this.tutar.TabIndex = 12;
-            this.tutar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // plaka
-            // 
-            this.plaka.BackColor = System.Drawing.SystemColors.InfoText;
-            this.plaka.ForeColor = System.Drawing.SystemColors.Window;
-            this.plaka.Location = new System.Drawing.Point(167, 86);
-            this.plaka.Name = "plaka";
-            this.plaka.Size = new System.Drawing.Size(100, 20);
-            this.plaka.TabIndex = 11;
-            this.plaka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tutar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dateTimePicker1
             // 
@@ -143,20 +133,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // button1
+            // parabirimi
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(300, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 20);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Kaydet";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.parabirimi.BackColor = System.Drawing.SystemColors.InfoText;
+            this.parabirimi.Enabled = false;
+            this.parabirimi.ForeColor = System.Drawing.SystemColors.Window;
+            this.parabirimi.Location = new System.Drawing.Point(245, 112);
+            this.parabirimi.Name = "parabirimi";
+            this.parabirimi.Size = new System.Drawing.Size(22, 20);
+            this.parabirimi.TabIndex = 18;
+            this.parabirimi.Text = "TL";
+            this.parabirimi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // plaka
+            // 
+            this.plaka.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.plaka.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.plaka.ForeColor = System.Drawing.SystemColors.Info;
+            this.plaka.FormattingEnabled = true;
+            this.plaka.Location = new System.Drawing.Point(167, 85);
+            this.plaka.Name = "plaka";
+            this.plaka.Size = new System.Drawing.Size(100, 21);
+            this.plaka.TabIndex = 19;
             // 
             // YakıtVerForm
             // 
@@ -164,14 +162,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(360, 218);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.plaka);
+            this.Controls.Add(this.parabirimi);
             this.Controls.Add(this.msmodu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tutar);
-            this.Controls.Add(this.plaka);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.label5);
             this.DoubleBuffered = true;
@@ -180,6 +178,7 @@
             this.Name = "YakıtVerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YakıtVerForm";
+            this.Load += new System.EventHandler(this.YakıtVerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,11 +192,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tutar;
-        private System.Windows.Forms.TextBox plaka;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button msmodu;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox parabirimi;
+        private System.Windows.Forms.ComboBox plaka;
     }
 }

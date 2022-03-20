@@ -16,10 +16,11 @@ namespace AracTakip
         {
             InitializeComponent();
         }
+        private readonly string araclarJsonLocation = $"{Application.StartupPath}{Admin.araclarjsonkonum}";
 
         private void RaporFormu_Load(object sender, EventArgs e)
         {
-
+            Admin.PlakalarıGetir(plaka, araclarJsonLocation);
         }
 
         private void Exit_Click(object sender, EventArgs e)

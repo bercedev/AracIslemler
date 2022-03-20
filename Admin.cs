@@ -1,6 +1,8 @@
-﻿using System;
+﻿using __;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,10 +12,11 @@ namespace AracTakip
     internal class Admin
     {
         public string apath = Application.StartupPath;
-        public const string araclartxtkonum = "\\araclar.json";
+        public const string hareketjsonkonum = "\\hareket.json";
+        public const string araclarjsonkonum = "\\araclar.json";
 
 
-        internal static bool PlakaKontrol(TextBox plaka, ErrorProvider errorProvider1)
+        internal static bool PlakaKontrol(Control plaka, ErrorProvider errorProvider1)
         {
             try
             {
@@ -28,7 +31,22 @@ namespace AracTakip
             }
 
         }
+        internal static void PlakalarıGetir(ComboBox plaka,string araclarJsonLocation)
+        {
+            try
+            {
+                string filetxt = File.ReadAllText(araclarJsonLocation);
+                var js = Json.ReadAndReturnAraclar(filetxt);
+                foreach (Araç j in js.Araclar)
+                {
+                    plaka.Items.Add(j.Plaka);
+                }
+            }
+            catch (Exception)
+            {
 
+            }
+        }
         internal static void XYZAyarla(ref int x, ref int y, ref int z)
         {
             Random rnd = new Random();
@@ -111,7 +129,7 @@ namespace AracTakip
         {
             return base.Equals(obj);
         }
-        public const string Author = "Mustafa Dişbudak";
+        public const string Author = "Mustafa Disbudak";
         public override int GetHashCode()
         {
             return base.GetHashCode();

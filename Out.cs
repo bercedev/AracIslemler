@@ -4,12 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AracTakip
+namespace __
 {
-    internal class Out /*: __.Araçlar*/
-    {
-        public string Plaka { get; set; }
-        public double Tutar { get; set; }
-        public string Date { get; set; }
-    }
+
 }

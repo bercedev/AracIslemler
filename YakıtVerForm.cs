@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using __;
+using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AracTakip
@@ -16,6 +17,8 @@ namespace AracTakip
             Close();
         }
         bool cmd = false;
+        private readonly string araclarJsonLocation = $"{Application.StartupPath}{Admin.araclarjsonkonum}";
+
         private void Msmodu_Click(object sender, EventArgs e)
         {
             bool af = Admin.PlakaKontrol(plaka, errorProvider1);
@@ -25,19 +28,23 @@ namespace AracTakip
             Out @out = new Out { Date = dateTimePicker1.Text, Plaka = plaka.Text, Tutar = double.Parse(tutar.Text) };
 
 
+            Json.AllSteps JAllSteps = new Json.AllSteps()
+            {
+                JsonFileName = Admin.hareketjsonkonum,
+                StartupPath = Application.StartupPath,
+                JsonaEklenecekClass = @out
+            };
+
+            JAllSteps.RunAndAddOut();
+
 
             Textbox.Temizle(Controls, ref cmd);
+            MessageBox.Show("Bilgi","Yakıt Verme Kayıtları Başarıyla Gerçekleşti",MessageBoxButtons.OK,MessageBoxIcon.Hand);
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void YakıtVerForm_Load(object sender, EventArgs e)
         {
-            Queue<string> numbers = new Queue<string>();
-            numbers.Enqueue("one");
-            numbers.Enqueue("two");
-            numbers.Enqueue("three");
-            numbers.Enqueue("four");
-            numbers.Enqueue("five");
-            MessageBox.Show(numbers.Dequeue());
+            Admin.PlakalarıGetir(plaka,araclarJsonLocation);
         }
     }
 }

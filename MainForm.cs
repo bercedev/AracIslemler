@@ -13,7 +13,7 @@ namespace AracTakip
             InitializeComponent();
         }
         int /*delta = 0*/ x, y, z;
-        
+
         private void Button1_Click(object sender, EventArgs e)
         {
             Form frm = new KayıtForm();
